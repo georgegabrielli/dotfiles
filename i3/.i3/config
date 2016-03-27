@@ -98,8 +98,8 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q set Master mute
 
 
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo $HOME/bin/bright_down.sh
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo $HOME/bin/bright_up.sh
+bindsym XF86MonBrightnessDown exec sudo ./$HOME/bin/bright_down.sh
+bindsym XF86MonBrightnessUp exec sudo ./$HOME/bin/bright_up.sh 
 
 bindsym Print exec maim ~/Pictures/Screenshots/$(date +%F-%T).png
 # focus the child container
