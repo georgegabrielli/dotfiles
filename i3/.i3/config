@@ -89,6 +89,19 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+# Multimedia Keys
+# increase volume
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
+# decrease volume
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+# mute volume
+bindsym XF86AudioMute exec amixer -q set Master mute
+
+
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo $HOME/bin/bright_down.sh
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo $HOME/bin/bright_up.sh
+
+bindsym Print exec maim ~/Pictures/Screenshots/$(date +%F-%T).png
 # focus the child container
 #bindsym $mod+d focus child
 
@@ -199,15 +212,15 @@ assign [class="Firefox"] $workspace1
 assign [class="Spotify"] $workspace10
 assign [class="Skype"] $workspace9
 assign [class="FossaMail"] $workspace8
-assign [class="Terminator"] $workspace2
+assign [class="urxvt"] $workspace2
 for_window [class="Spotify"] move to workspace $workspace10
 
 #assign [class="XTerm"] $workspace2
-exec_always --no-startup-id compton
-exec_always --no-startup-id $HOME/bin/setwallpaper.sh
+exec --no-startup-id compton
+exec --no-startup-id $HOME/bin/setwallpaper.sh
 exec skype
 exec spotify
 exec fossamail
 exec firefox
 exec --no-startup-id dunst
-exec terminator
+exec urxvt 
