@@ -4,7 +4,7 @@ sed on http://openweathermap.org/current
 API_KEY="a62db8f4baad6532e2eee99783e2c6c8"
 
 # Check on http://openweathermap.org/find
-CITY_ID="2637487"
+CITY_ID="681290"
 
 URGENT_LOWER=-1000
 URGENT_HIGHER=1000
