@@ -200,15 +200,16 @@ assign [class="Firefox"] $workspace1
 assign [class="Spotify"] $workspace10
 assign [class="Skype"] $workspace9
 assign [class="FossaMail"] $workspace8
-assign [class="Terminator"] $workspace2
+assign [class="URxvt"] $workspace2
 for_window [class="Spotify"] move to workspace $workspace10
 
 #assign [class="XTerm"] $workspace2
-exec_always --no-startup-id compton
-exec_always --no-startup-id $HOME/bin/setwallpaper.sh
+exec --no-startup-id compton
+exec --no-startup-id $HOME/bin/setwallpaper.sh
 exec skype
 exec spotify
 exec fossamail
 exec firefox
 exec --no-startup-id dunst
-exec terminator
+exec urxvt
+exec --no-startup-id $HOME/bin/play.sh
