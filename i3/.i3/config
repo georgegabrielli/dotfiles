@@ -92,8 +92,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1: net  "
-set $workspace2 "2: dev  "
+set $workspace1 "1: firefox  "
+set $workspace2 "2: terminal  "
 set $workspace3 "3: misc"
 set $workspace4 "4: misc"
 set $workspace5 "5: misc"
@@ -198,8 +198,8 @@ for_window [class="^.*"] border pixel 2
 assign [class="Firefox"] $workspace1
 assign [class="Spotify"] $workspace10
 assign [class="Skype"] $workspace9
-assign [class="fossamail"] $workspace8
-
+assign [class="FossaMail"] $workspace8
+assign [class="Terminator"] $workspace2
 for_window [class="Spotify"] move to workspace $workspace10
 
 #assign [class="XTerm"] $workspace2
@@ -210,3 +210,4 @@ exec spotify
 exec fossamail
 exec firefox
 exec --no-startup-id dunst
+exec terminator
