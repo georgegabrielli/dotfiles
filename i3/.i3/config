@@ -199,7 +199,7 @@ for_window [class="^.*"] border pixel 2
 assign [class="Firefox"] $workspace1
 assign [class="Spotify"] $workspace10
 assign [class="Skype"] $workspace9
-assign [class="FossaMail"] $workspace8
+assign [class="Fossa"] $workspace8
 assign [class="URxvt"] $workspace2
 for_window [class="Spotify"] move to workspace $workspace10
 
