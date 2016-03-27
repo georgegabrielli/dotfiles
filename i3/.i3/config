@@ -89,6 +89,7 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+bindsym Print exec maim ~/Pictures/Screenshots/$(date +%F-%T).png
 # focus the child container
 #bindsym $mod+d focus child
 
