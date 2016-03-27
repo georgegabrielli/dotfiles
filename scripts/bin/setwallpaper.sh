@@ -17,5 +17,5 @@ echo "$$" > $pid_file
 
 while true; do
 	find $path/ -type f \( -iname '*.jpg' -o -iname '*.png' \) | shuf -n1 | xargs feh --bg-scale
-	sleep 15m
+	sleep 2m
 done

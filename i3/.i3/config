@@ -162,3 +162,4 @@ gaps inner 10
 for_window [class="^.*"] border pixel 2
 
 exec_always --no-startup-id compton
+exec_always --no-startup-id $HOME/bin/setwallpaper.sh
