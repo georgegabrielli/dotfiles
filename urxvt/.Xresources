@@ -1,5 +1,5 @@
 URxvt.borderColor:      [90]#545251
-URxvt.internalBorder:   5
+URxvt.internalBorder:  4 
 URxvt.scrollBar: false
 
 ! Base16 Flat
@@ -7,7 +7,7 @@ URxvt.scrollBar: false
 urxvt.depth: 32
 
 ! URxvt*background:                     [95]#17202A
-URxvt.background:                     [90]#17202A
+URxvt.background:                     [90]#000000
 URxvt*foreground:                     #e0e0e0
 URxvt*cursorColor:                    #e0e0e0
 
@@ -46,3 +46,4 @@ URxvt.iso14755: false
 
 URxvt.font: xft:size=16
 URxvt.letterSpace: -8
+
