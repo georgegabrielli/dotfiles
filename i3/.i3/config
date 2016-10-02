@@ -134,7 +134,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
 bindsym $mod+p exec --no-startup-id $HOME/bin/play.sh
+bindsym $mod+n exec --no-startup-id $HOME/bin/next.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -172,7 +174,8 @@ set $urgent-bg-color     #E53935
 # finds out, if available)
 bar {
 
-        status_command i3blocks -c ~/.i3/i3blocks.conf
+       # status_command i3blocks -c ~/.i3/i3blocks.conf
+	status_command python ~/.i3/i3py.py
 	i3bar_command i3bar
 	position top
 	tray_padding 10
@@ -208,9 +211,11 @@ for_window [class="Spotify"] move to workspace $workspace10
 exec --no-startup-id compton
 exec --no-startup-id $HOME/bin/setwallpaper.sh
 exec skype
-exec spotify
+exec spotify --force-device-scale-factor=1.0000001
 exec fossamail
 exec firefox
 exec --no-startup-id dunst
 exec urxvt
+exec --no-startup-id $HOME/bin/delete.sh
+exec sleep 2m
 exec --no-startup-id $HOME/bin/play.sh

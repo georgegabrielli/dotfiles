@@ -16,6 +16,6 @@ fi
 echo "$$" > $pid_file
 
 while true; do
-	find $path/ -type f \( -iname '*.jpg' -o -iname '*.png' \) | shuf -n1 | xargs feh --bg-scale
-	sleep 2m
+	find $path/ -type f \( -iname '*.jpg' -o -iname '*.png' \) | shuf -n1 | xargs feh --bg-fill
+	sleep 1m
 done

@@ -1,5 +1,5 @@
-URxvt.borderColor:      [90]#545251
-URxvt.internalBorder:  4 
+URxvt.borderColor:      [90]#000000
+URxvt.Border:  3 
 URxvt.scrollBar: false
 
 ! Base16 Flat
@@ -44,6 +44,6 @@ Xcursor.size: 30
 
 URxvt.iso14755: false
 
-URxvt.font: xft:size=16
+URxvt.font: xft:monaco:size=16
 URxvt.letterSpace: -8
 
