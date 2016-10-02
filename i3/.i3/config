@@ -211,7 +211,7 @@ for_window [class="Spotify"] move to workspace $workspace10
 exec --no-startup-id compton
 exec --no-startup-id $HOME/bin/setwallpaper.sh
 exec skype
-exec spotify --force-device-scale-factor=1.0000001
+exec spotify
 exec fossamail
 exec firefox
 exec --no-startup-id dunst
