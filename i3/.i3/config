@@ -36,7 +36,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec "rofi -fullscreen -show run"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -45,7 +45,7 @@ bindsym $mod+d exec dmenu_run
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
+bindsym $mod+l exec slimlock
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
@@ -97,7 +97,8 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 # mute volume
 bindsym XF86AudioMute exec amixer -q set Master mute
 
-
+bindsym Mod1+Tab workspace back_and_forth
+bindsym $mod+Tab workspace next_on_output
 bindsym XF86MonBrightnessDown exec sudo $HOME/bin/bright_down.sh
 bindsym XF86MonBrightnessUp exec sudo $HOME/bin/bright_up.sh 
 
@@ -181,26 +182,6 @@ set $urgent-bg-color     #E53935
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-
-        status_command i3blocks -c ~/.i3/i3blocks.conf
-	i3bar_command i3bar
-	position top
-	tray_padding 10
-	tray_output none
-	colors {
-		background $bg-color
-		statusline #E7E9DB
-		separator #776E71
-
-		# Type		   border  background font
-		focused_workspace  $bg-color $bg-color $text-color
-        	active_workspace   $bg-color $bg-color $inactive-text-color
-        	inactive_workspace $bg-color $bg-color $inactive-text-color
-	    	urgent_workspace   $text-color $text-color #ffffff
-		}
-
-}
 
 # i3 config
 gaps outer 5
@@ -224,3 +205,6 @@ exec fossamail
 exec firefox
 exec --no-startup-id dunst
 exec urxvt 
+exec xautolock -locker slimlock -time 5
+exec xss-lock -- slimlock
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
