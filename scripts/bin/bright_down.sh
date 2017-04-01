@@ -1,8 +1,8 @@
 #!/bin/bash
-brightness=$(cat /sys/class/backlight/acpi_video0/brightness)
+brightness=$(cat /sys/class/backlight/intel_backlight/brightness)
 
-new_value=$(bc <<< "$brightness - 1")
+new_value=$(bc <<< "$brightness - 5")
 if [ $new_value -gt "0" ]; then
-  echo "echo $new_value > /sys/class/backlight/acpi_video0/brightness" | sudo bash
+  $(light -U 5)
 
 fi

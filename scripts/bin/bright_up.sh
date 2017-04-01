@@ -1,11 +1,13 @@
 
 #!/bin/bash
-max_brightness=$(cat /sys/class/backlight/acpi_video0/max_brightness)
-brightness=$(cat /sys/class/backlight/acpi_video0/brightness)
+max_brightness=$(cat /sys/class/backlight/intel_backlight/max_brightness)
 
-new_value=$(bc <<< "$brightness+1")
-if [ $new_value -gt $max_brightness ]; then
-	new_value=$max_brightness
+brightness=$(cat /sys/class/backlight/intel_backlight/brightness)
+
+
+new_value=$(bc <<< "$brightness+5")
+
+if [ "$max_brightness" -gt "$new_value" ]; then
+	$(light -A 5)
 fi
 
-echo "echo $new_value > /sys/class/backlight/acpi_video0/brightness" | sudo bash

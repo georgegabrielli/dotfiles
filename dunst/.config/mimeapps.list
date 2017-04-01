@@ -1,2 +1,3 @@
 [Added Associations]
 text/x-java=sublime-text.desktop;
+text/plain=sublime-text.desktop;

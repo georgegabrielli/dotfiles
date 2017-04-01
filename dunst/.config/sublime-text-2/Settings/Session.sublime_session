@@ -32,6 +32,113 @@
 						"buffer_size": 4214,
 						"line_ending": "Unix"
 					}
+				},
+				{
+					"file": "/home/gobi/Downloads/lab24/lab2-4/client/src/main/java/ro/ubb/movierental/client/tcp/TcpClient.java",
+					"settings":
+					{
+						"buffer_size": 1726,
+						"line_ending": "Windows"
+					}
+				},
+				{
+					"file": "/home/gobi/Downloads/lab24/lab2-4/settings.gradle",
+					"settings":
+					{
+						"buffer_size": 85,
+						"line_ending": "Windows"
+					}
+				},
+				{
+					"file": "/home/gobi/Downloads/lab24/lab2-4/common/build.gradle",
+					"settings":
+					{
+						"buffer_size": 83,
+						"line_ending": "Windows"
+					}
+				},
+				{
+					"contents": "package ro.ubb.movierental.client.ui;\n\nimport ro.ubb.movierental.common.IService;\n\nimport java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\nimport java.util.concurrent.ExecutionException;\nimport java.util.concurrent.Future;\n\n/**\n * Created by Laura on 28-Mar-17.\n */\npublic class AppUi {\n\n    private IService service;\n    private BufferedReader bufferedReader;\n\n    public AppUi(IService service) {\n        this.service = service;\n        this.bufferedReader = new BufferedReader(new InputStreamReader(System.in));\n    }\n\n    public void run(){\n        while (true){\n            String cmd = requestMenu();\n            sendRequest(cmd);\n        }\n    }\n\n    private String requestMenu() {\n        Future<String> rezsult = service.requestMenu();\n        try{\n            System.out.println(result.get());\n        }catch(InterruptedException | ExecutionException e){\n            e.printStackTrace();\n        }\n\n        try {\n            String option = bufferedReader.readLine().trim();\n            return option;\n        }catch(IOException e){\n            return null;\n        }\n    }\n\n    private void sendRequest(String cmd) {\n        switch (cmd){\n            case \"0\":\n                System.exit(0);\n            case \"1\":\n                //for add movie\n                addMovie();\n                break;\n            case \"3\":\n                //for delete movie\n                readMovieId();\n                break;\n            case \"4\":\n                //for update movie\n                updateMovie();\n                break;\n            case \"2\":\n                //for view movies\n                printAllMovies();\n                break;\n            default:\n                System.out.println(\"Invalid input\\n\");\n                break;\n        }\n\n    }\n\n    private void updateMovie() {\n        //TODO\n    }\n\n    private void readMovieId() {\n        Future<String> result;\n        try {\n            System.out.print(\"id = \");\n            int id = Integer.valueOf(bufferedReader.readLine());\n\n            result = service.deleteMovie(id+\"\");\n            System.out.println(result.get());\n        } catch (Exception e) {\n            System.out.println(e.getMessage());\n        }\n    }\n\n    private void addMovie() {\n        Future<String> result;\n        try{\n            System.out.print(\"id = \");\n            int id = Integer.valueOf(bufferedReader.readLine());\n\n            System.out.print(\"name = \");\n            String name = bufferedReader.readLine();\n\n            System.out.print(\"year = \");\n            int year = Integer.valueOf(bufferedReader.readLine());\n\n            System.out.print(\"genre = \");\n            String genre = bufferedReader.readLine();\n\n            result = service.addMovie(id+\",\"+name+\",\"+year+\",\"+genre);\n            System.out.println(result.get());\n        }catch(Exception e){\n            System.out.println(e.getMessage());\n        }\n    }\n\n    private void printAllMovies() {\n        Future<String> result;\n        try {\n            result = service.getAll(\"movies\");\n            System.out.println(result.get());\n        }catch(Exception e){\n            System.out.println(e.getMessage());\n        }\n    }\n}\n",
+					"file": "/home/gobi/Downloads/lab24/lab2-4/client/src/main/java/ro/ubb/movierental/client/ui/AppUi.java",
+					"file_size": 3309,
+					"file_write_time": 1490655700000000,
+					"settings":
+					{
+						"buffer_size": 3188,
+						"line_ending": "Windows"
+					}
+				},
+				{
+					"file": "/home/gobi/Downloads/c04-remoting/server/src/main/java/ro/ubb/c04remoting/server/config/StudentServiceConfig.java",
+					"settings":
+					{
+						"buffer_size": 825,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/gobi/Downloads/c04-remoting/client/src/main/java/ro/ubb/c04remoting/client/service/StudentServiceClient.java",
+					"settings":
+					{
+						"buffer_size": 533,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/gobi/Downloads/c04-remoting/client/src/main/java/ro/ubb/c04remoting/client/config/StudentServiceClientConfig.java",
+					"settings":
+					{
+						"buffer_size": 949,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/gobi/Downloads/c04-remoting/server/src/main/java/ro/ubb/c04remoting/server/ServerApp.java",
+					"settings":
+					{
+						"buffer_size": 346,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/gobi/Downloads/c04-remoting/server/src/main/java/ro/ubb/c04remoting/server/service/StudentServiceImpl.java",
+					"settings":
+					{
+						"buffer_size": 450,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/gobi/Downloads/lab24/lab2-4/client/src/main/java/ro/ubb/movierental/client/ClientApp.java",
+					"settings":
+					{
+						"buffer_size": 832,
+						"line_ending": "Windows"
+					}
+				},
+				{
+					"file": "/home/gobi/Downloads/lab24/lab2-4/server/src/main/java/ro/ubb/movierental/server/tcp/TcpServer.java",
+					"settings":
+					{
+						"buffer_size": 3190,
+						"line_ending": "Windows"
+					}
+				},
+				{
+					"file": "/home/gobi/Downloads/lab24/lab2-4/server/src/main/java/ro/ubb/movierental/server/ServerApp.java",
+					"settings":
+					{
+						"buffer_size": 4501,
+						"line_ending": "Windows"
+					}
+				},
+				{
+					"file": "/home/gobi/Downloads/lab24/lab2-4/server/src/main/java/ro/ubb/movierental/server/service/ServerServiceImpl.java",
+					"settings":
+					{
+						"buffer_size": 3755,
+						"line_ending": "Windows"
+					}
 				}
 			],
 			"build_system": "",
@@ -58,6 +165,12 @@
 			},
 			"file_history":
 			[
+				"/home/gobi/Downloads/lab24/lab2-4/common/src/main/java/ro/ubb/movierental/common/Message.java",
+				"/home/gobi/Downloads/lab24/lab2-4/common/src/main/java/ro/ubb/movierental/common/IService.java",
+				"/home/gobi/Downloads/lab24/lab2-4/client/src/main/java/ro/ubb/movierental/client/service/ClientServiceImpl.java",
+				"/home/gobi/Downloads/lab24/lab2-4/client/src/main/java/ro/ubb/movierental/client/ClientApp.java",
+				"/home/gobi/Downloads/lab24/lab2-4/build.gradle",
+				"/home/gobi/Downloads/lab24/lab2-4/client/build.gradle",
 				"/home/gobi/Downloads/catalog1_I1_inmemory_infile/src/main/java/ro/ubb/catalog/repository/StudentFileRepository.java",
 				"/home/gobi/Downloads/catalog1_I2_jdbc/catalog/src/main/java/ro/ubb/catalog/repository/StudentDbRepository.java",
 				"/home/gobi/Downloads/catalog1_I1_inmemory_infile/src/main/java/ro/ubb/catalog/repository/StudentXmlRepository.java",
@@ -99,7 +212,7 @@
 			"groups":
 			[
 				{
-					"selected": 1,
+					"selected": 9,
 					"sheets":
 					[
 						{
@@ -157,6 +270,356 @@
 								"zoom_level": 1.0
 							},
 							"type": "text"
+						},
+						{
+							"buffer": 2,
+							"file": "/home/gobi/Downloads/lab24/lab2-4/client/src/main/java/ro/ubb/movierental/client/tcp/TcpClient.java",
+							"settings":
+							{
+								"buffer_size": 1726,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										38,
+										38
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Java/Java.tmLanguage",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 3,
+							"file": "/home/gobi/Downloads/lab24/lab2-4/settings.gradle",
+							"settings":
+							{
+								"buffer_size": 85,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 4,
+							"file": "/home/gobi/Downloads/lab24/lab2-4/common/build.gradle",
+							"settings":
+							{
+								"buffer_size": 83,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 5,
+							"file": "/home/gobi/Downloads/lab24/lab2-4/client/src/main/java/ro/ubb/movierental/client/ui/AppUi.java",
+							"settings":
+							{
+								"buffer_size": 3188,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										3121,
+										3121
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Java/Java.tmLanguage",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 1005.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 6,
+							"file": "/home/gobi/Downloads/c04-remoting/server/src/main/java/ro/ubb/c04remoting/server/config/StudentServiceConfig.java",
+							"settings":
+							{
+								"buffer_size": 825,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Java/Java.tmLanguage",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 90.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 7,
+							"file": "/home/gobi/Downloads/c04-remoting/client/src/main/java/ro/ubb/c04remoting/client/service/StudentServiceClient.java",
+							"settings":
+							{
+								"buffer_size": 533,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Java/Java.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 8,
+							"file": "/home/gobi/Downloads/c04-remoting/client/src/main/java/ro/ubb/c04remoting/client/config/StudentServiceClientConfig.java",
+							"settings":
+							{
+								"buffer_size": 949,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Java/Java.tmLanguage"
+								},
+								"translation.x": 48.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 9,
+							"file": "/home/gobi/Downloads/c04-remoting/server/src/main/java/ro/ubb/c04remoting/server/ServerApp.java",
+							"settings":
+							{
+								"buffer_size": 346,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										346,
+										346
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Java/Java.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 10,
+							"file": "/home/gobi/Downloads/c04-remoting/server/src/main/java/ro/ubb/c04remoting/server/service/StudentServiceImpl.java",
+							"settings":
+							{
+								"buffer_size": 450,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Java/Java.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 11,
+							"file": "/home/gobi/Downloads/lab24/lab2-4/client/src/main/java/ro/ubb/movierental/client/ClientApp.java",
+							"settings":
+							{
+								"buffer_size": 832,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										35,
+										35
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Java/Java.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 12,
+							"file": "/home/gobi/Downloads/lab24/lab2-4/server/src/main/java/ro/ubb/movierental/server/tcp/TcpServer.java",
+							"settings":
+							{
+								"buffer_size": 3190,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Java/Java.tmLanguage",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 96.0,
+								"translation.y": 540.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 13,
+							"file": "/home/gobi/Downloads/lab24/lab2-4/server/src/main/java/ro/ubb/movierental/server/ServerApp.java",
+							"settings":
+							{
+								"buffer_size": 4501,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Java/Java.tmLanguage",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 120.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 14,
+							"file": "/home/gobi/Downloads/lab24/lab2-4/server/src/main/java/ro/ubb/movierental/server/service/ServerServiceImpl.java",
+							"settings":
+							{
+								"buffer_size": 3755,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Java/Java.tmLanguage",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
 						}
 					]
 				}
@@ -192,7 +655,7 @@
 				]
 			},
 			"menu_visible": true,
-			"position": "0,0,0,0,0,965,52,1901,1061,1920,1080",
+			"position": "0,0,0,0,0,1285,52,1901,1061,1920,1080",
 			"replace":
 			{
 				"height": 0.0
