@@ -1,0 +1,4 @@
+dunst/.config/*
+!dunst/.config/dunst/*
+!dunst/.config/polybar/*
+
