@@ -1,4 +1,0 @@
-dunst/.config/*
-!dunst/.config/dunst/*
-!dunst/.config/polybar/*
-!dunst/.config/neofetch/*
