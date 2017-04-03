@@ -199,13 +199,10 @@ for_window [class="Spotify"] move to workspace $workspace10
 #assign [class="XTerm"] $workspace2
 exec --no-startup-id compton
 exec --no-startup-id $HOME/bin/setwallpaper.sh
-exec skype
 exec spotify
-exec fossamail
 exec firefox
 exec --no-startup-id dunst
 exec urxvt 
-exec xautolock -locker slimlock -time 5
-exec xss-lock -- slimlock
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec guake
+exec --no-startup-id guake
+exec --no-startup-id volnoti
